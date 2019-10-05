@@ -2,11 +2,13 @@
   import { mapMutations } from 'vuex'
   import Header from '@/components/Header'
   import Footer from '@/components/Footer'
+  import Content from '@/containers/Content'
   export default {
     name: 'Root',
     components: {
       Header,
-      Footer
+      Footer,
+      Content
     },
     data() {
       return {}

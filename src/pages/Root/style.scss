@@ -2,6 +2,27 @@
   min-height: 100%;
   display: grid;
   // grid-template-rows: auto 1fr;
+  background: rgb(9, 33, 64); /* Old browsers */
+  background: -moz-linear-gradient(
+    top,
+    rgba(9, 33, 64, 1) 0%,
+    rgba(21, 52, 90, 1) 25%,
+    rgba(44, 88, 143, 1) 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    rgba(9, 33, 64, 1) 0%,
+    rgba(21, 52, 90, 1) 25%,
+    rgba(44, 88, 143, 1) 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    rgba(9, 33, 64, 1) 0%,
+    rgba(21, 52, 90, 1) 25%,
+    rgba(44, 88, 143, 1) 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#092140', endColorstr='#2c588f',GradientType=0 ); /* IE6-9 */
+
   > .loading {
     @extend %set-fixed-full;
     background-color: $maskColor;
@@ -10,8 +31,36 @@
     align-items: center;
     z-index: 102;
   }
+  .max_width {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  > .content {
+    padding: 30px 50px;
+    #ct_content:nth-child(2) {
+      margin-top: 60px;
+    }
+  }
+  > p {
+    font-size: 20px;
+    color: $lightColor;
+    line-height: 36px;
+  }
 }
 
 // $desktopHD | $desktop | $tablet | $mobile
-// @include devicepoint($desktopHD) {
-// }
+@include devicepoint($tablet) {
+  #pg_root {
+    > .content {
+      padding: 30px 30px;
+    }
+  }
+}
+@include devicepoint($mobile) {
+  #pg_root {
+    > .content {
+      padding: 30px 20px;
+    }
+  }
+}
