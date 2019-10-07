@@ -3,12 +3,14 @@
   import Header from '@/components/Header'
   import Footer from '@/components/Footer'
   import Content from '@/containers/Content'
+  import CoverStudent from '@/containers/CoverStudent'
   export default {
     name: 'Root',
     components: {
       Header,
       Footer,
-      Content
+      Content,
+      CoverStudent
     },
     data() {
       return {}

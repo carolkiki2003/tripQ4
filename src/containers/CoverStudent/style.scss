@@ -1,0 +1,54 @@
+#ct_cover_student {
+  width: 100%;
+  margin-top: 60px;
+  background: url(../../assets/images/star.png) repeat center;
+  background-size: 70%;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  .people {
+    width: 50%;
+    padding-top: 23%;
+    background: url(../../assets/images/cover_s.png) no-repeat center;
+    background-size: contain;
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    .slogan2 {
+      color: #114788;
+      background-color: #fbeda6;
+      background-size: contain;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      display: inline-block;
+      padding: 10px 20px;
+    }
+  }
+}
+
+// $desktopHD | $tablet | $mobile
+@include devicepoint($desktopHD) {
+  #ct_cover_student {
+    .people {
+      width: 67%;
+      padding-top: 30%;
+    }
+  }
+}
+@include devicepoint($tablet) {
+  #ct_cover_student {
+    .people {
+      width: 80%;
+      padding-top: 36%;
+    }
+  }
+}
+@include devicepoint($mobile) {
+  #ct_cover_student {
+    .people {
+      width: 90%;
+      padding-top: 40%;
+    }
+  }
+}

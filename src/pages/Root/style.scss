@@ -1,6 +1,6 @@
 #pg_root {
   min-height: 100%;
-  display: grid;
+  // display: grid;
   // grid-template-rows: auto 1fr;
   background: rgb(9, 33, 64); /* Old browsers */
   background: -moz-linear-gradient(
@@ -31,13 +31,12 @@
     align-items: center;
     z-index: 102;
   }
-  .max_width {
+  > .content {
+    padding: 30px 50px;
+    box-sizing: border-box;
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
-  }
-  > .content {
-    padding: 30px 50px;
     #ct_content {
       position: relative;
       &:nth-child(1) {

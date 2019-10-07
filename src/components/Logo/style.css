@@ -1,0 +1,117 @@
+.cp_logo {
+  width: 100%;
+  height: 100%;
+}
+
+.cp_logo > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.cp_logo > a > h1 {
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-top: 38%;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.cp_logo > a:before, .cp_logo > a:after {
+  content: '';
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: absolute;
+}
+
+.cp_logo.logo_b > a > h1 {
+  background-image: url("./images/logo_b1.svg");
+}
+
+.cp_logo.logo_b > a:before {
+  background-image: url("./images/logo_b2.svg");
+}
+
+.cp_logo.logo_b > a:after {
+  background-image: url("./images/logo_b3.svg");
+}
+
+.cp_logo.logo_w > a > h1 {
+  background-image: url("./images/logo_w1.svg");
+}
+
+.cp_logo.logo_w > a:before {
+  background-image: url("./images/logo_w2.svg");
+}
+
+.cp_logo.logo_w > a:after {
+  background-image: url("./images/logo_w3.svg");
+}
+
+.cp_logo.logo_s3 > a {
+  padding-bottom: 35%;
+}
+
+.cp_logo.logo_s3 > a:before {
+  width: 100%;
+  height: 19%;
+  top: 63%;
+  left: 0;
+}
+
+.cp_logo.logo_s3 > a:after {
+  width: 100%;
+  height: 14%;
+  top: 87%;
+  left: 0;
+}
+
+.cp_logo.logo_h > a {
+  padding-right: 50%;
+}
+
+.cp_logo.logo_h > a:before {
+  width: 46%;
+  height: 38%;
+  top: 28%;
+  right: 0%;
+}
+
+.cp_logo.logo_h > a:after {
+  width: 46%;
+  height: 28%;
+  top: 71%;
+  right: 0%;
+}
+
+.cp_logo.logo_s2 > a {
+  padding-bottom: 22%;
+}
+
+.cp_logo.logo_s2 > a:before {
+  width: 100%;
+  height: 25%;
+  top: 76%;
+  left: 0;
+}
+
+.cp_logo.logo_s2 > a:after {
+  display: none;
+}
+
+.cp_logo.logo_o > a:before {
+  display: none;
+}
+
+.cp_logo.logo_o > a:after {
+  width: 55%;
+  height: 16%;
+  top: 2%;
+  right: 0%;
+}
+/*# sourceMappingURL=style.css.map */
