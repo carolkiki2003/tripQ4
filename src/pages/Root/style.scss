@@ -38,14 +38,127 @@
   }
   > .content {
     padding: 30px 50px;
-    #ct_content:nth-child(2) {
-      margin-top: 60px;
+    #ct_content {
+      position: relative;
+      &:nth-child(1) {
+        &:before {
+          content: '';
+          display: block;
+          width: 50px;
+          height: 150px;
+          background: url(../../assets/images/rocket.svg) no-repeat center;
+          background-size: contain;
+          position: absolute;
+          top: -68px;
+          right: 55px;
+          transform: rotate(-60deg);
+        }
+      }
+      &:nth-child(2) {
+        margin-top: 60px;
+        &:before {
+          content: '';
+          display: block;
+          width: 100px;
+          height: 70px;
+          background: url(../../assets/images/planet.svg) no-repeat center;
+          background-size: contain;
+          position: absolute;
+          top: -34px;
+          left: 85px;
+          transform: rotate(-10deg);
+        }
+      }
+      ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        li {
+          h2 {
+            border-bottom: 1px solid #092240;
+          }
+          width: 250px;
+          height: 250px;
+          background-color: $lightColor;
+          border-radius: 50%;
+          padding: 37px 37px;
+          position: relative;
+          &:after {
+            content: '';
+            display: block;
+            width: 80%;
+            height: 80%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            position: absolute;
+          }
+          &:nth-child(1) {
+            &:after {
+              background-image: url(../../assets/images/style.png);
+              left: 0;
+            }
+          }
+          &:nth-child(2) {
+            margin: 190px 0 0 0;
+            &:after {
+              background-image: url(../../assets/images/map.png);
+              right: -45px;
+              bottom: -40px;
+            }
+          }
+          &:nth-child(3) {
+            &:after {
+              background-image: url(../../assets/images/job.png);
+              width: 70%;
+              height: 70%;
+              right: -40px;
+              bottom: -80px;
+            }
+          }
+          .girl,
+          .girl2 {
+            width: 170px;
+            height: 170px;
+            background: url(../../assets/images/girl.svg) no-repeat center;
+            background-size: contain;
+            position: absolute;
+            top: -150px;
+            left: 50%;
+            transform: translate(-45%, 0);
+            > span,
+            &:before,
+            &:after {
+              position: absolute;
+              font-size: 30px;
+              color: #202121;
+            }
+            span {
+              top: -40px;
+            }
+            &:before {
+              content: '?';
+              left: 0;
+              transform: rotate(-30deg);
+            }
+            &:after {
+              content: '?';
+              right: 0;
+              transform: rotate(30deg);
+            }
+          }
+          .girl2 {
+            display: none;
+          }
+        }
+      }
     }
-  }
-  > p {
-    font-size: 20px;
-    color: $lightColor;
-    line-height: 36px;
+    > p {
+      font-size: 20px;
+      color: $lightColor;
+      line-height: 36px;
+      margin: 70px auto 50px;
+    }
   }
 }
 
@@ -54,6 +167,73 @@
   #pg_root {
     > .content {
       padding: 30px 30px;
+      #ct_content {
+        &:nth-child(1) {
+          &:before {
+            width: 34px;
+            height: 100px;
+            top: -50px;
+            right: 17px;
+            z-index: 2;
+          }
+        }
+        &:nth-child(2) {
+          padding: 40px 0px 100px;
+          &:before {
+            width: 60px;
+            height: 40px;
+            top: -19px;
+            left: -9px;
+            z-index: 2;
+          }
+        }
+        ul {
+          flex-wrap: wrap;
+          li {
+            &:after {
+              position: relative;
+              top: 0;
+              left: 0;
+              margin: 0 auto;
+            }
+            &:nth-child(1) {
+              margin: 0 20px 40px 0;
+            }
+            &:nth-child(2) {
+              margin: 0 0 40px 0;
+            }
+            &:nth-child(3) {
+              margin: 20px 0 0 0;
+            }
+            .girl {
+              display: none;
+            }
+            .girl2 {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 580px) {
+  #pg_root {
+    > .content {
+      padding: 30px 20px;
+      #ct_content {
+        ul {
+          flex-direction: column;
+          li {
+            &:nth-child(1) {
+              margin: 0 0 40px 0;
+            }
+            .girl2 {
+              display: none;
+            }
+          }
+        }
+      }
     }
   }
 }

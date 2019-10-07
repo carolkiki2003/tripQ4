@@ -1,12 +1,15 @@
 #ct_content {
+  position: relative;
   background: #d0e4fd;
   width: 100%;
   border-radius: 20px;
   margin-top: 20px;
   text-align: center;
-  height: 300px;
+  padding: 50px 40px;
   .title {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 50%;
     display: inline-block;
     color: #ffd119;
     font-size: 20px;
@@ -15,7 +18,8 @@
     border: 2px solid #c4fff5;
     border-radius: 20px;
     padding: 0 50px;
-    margin-top: -20px;
+    transform: translate3d(-50%, -50%, 0);
+    white-space: nowrap;
 
     &:before,
     &:after {
@@ -38,12 +42,31 @@
       right: 20px;
     }
   }
+  h2 {
+    font-size: 24px;
+    color: #1e538c;
+  }
+  p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #092240;
+    span {
+      color: #1d7cf2;
+    }
+  }
 }
 
 // $desktopHD | $tablet | $mobile
+@include devicepoint($tablet) {
+  #ct_content {
+    border-radius: 15px;
+    padding: 40px 30px;
+  }
+}
 @include devicepoint($mobile) {
   #ct_content {
     border-radius: 10px;
+    padding: 30px;
     .title {
       font-size: 16px;
       padding: 0 35px;
