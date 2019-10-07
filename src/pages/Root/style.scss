@@ -153,6 +153,28 @@
         }
       }
     }
+    .btns {
+      display: flex;
+      justify-content: space-around;
+      padding: 20px;
+      > a {
+        width: 200px;
+        text-align: center;
+        display: inline-block;
+        font-size: 20px;
+        color: #ffd119;
+        background-color: #0e315d;
+        border: 2px solid #c4fff5;
+        padding: 10px 20px;
+        border-radius: 23.5px;
+        transition: all 0.5s;
+        animation: go 1s infinite;
+        &:hover {
+          background-color: #3371bd;
+          transform: scale(1.05);
+        }
+      }
+    }
     > p {
       font-size: 20px;
       color: $lightColor;
@@ -214,6 +236,13 @@
           }
         }
       }
+      .btns {
+        > a {
+          &:nth-child(1) {
+            margin: 0 20px 0 0;
+          }
+        }
+      }
     }
   }
 }
@@ -231,6 +260,15 @@
             .girl2 {
               display: none;
             }
+          }
+        }
+      }
+      .btns {
+        flex-wrap: wrap;
+        > a {
+          width: 100%;
+          &:nth-child(1) {
+            margin: 0 0 20px 0;
           }
         }
       }
