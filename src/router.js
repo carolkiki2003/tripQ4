@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+// import Roo from '../src/pages/Roo'
 Vue.use(Router)
 
 const router = new Router({
@@ -8,8 +9,7 @@ const router = new Router({
   routes: [
     // {
     //   path: '/',
-    //   name: 'example',
-    //   component: example
+    //   name: 'Roo'
     // }
   ]
 })

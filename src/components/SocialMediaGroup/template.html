@@ -1,0 +1,10 @@
+<div class="cp_social_media_group" :class="{isOpen: isOpen}"
+  @click="isOpen = !isOpen"
+  @mouseleave="isOpen = false"
+>
+  <FontButton class="menu">
+    <i v-if="!isOpen" class="fas fa-share-alt"></i>
+    <i v-else class="fas fa-times"></i>
+  </FontButton>
+  <SocialMedia v-for="type in socialMedia" :type="type" :key="type"/>
+</div>

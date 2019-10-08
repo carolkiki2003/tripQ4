@@ -1,10 +1,79 @@
 #ct_cover_student {
   width: 100%;
-  margin-top: 60px;
+  margin-top: 55px;
   background: url(../../assets/images/star.png) repeat center;
   background-size: 70%;
   padding: 30px 20px;
   box-sizing: border-box;
+  text-align: center;
+  position: relative;
+  .lights {
+    width: 100%;
+    height: 300px;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    .left,
+    .right {
+      width: 200px;
+      height: 100%;
+      background: linear-gradient(
+        to bottom,
+        rgba(247, 242, 177, 0.5) 0%,
+        rgba(247, 242, 177, 0.2) 58%,
+        rgba(247, 242, 177, 0) 99%,
+        rgba(247, 242, 177, 0) 100%
+      ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80f7f2b1', endColorstr='#00f7f2b1',GradientType=0 ); /* IE6-9 */
+    }
+    .left {
+      float: left;
+      transform: skew(60deg);
+      transform-origin: left top;
+      animation: leftlight 0.5s;
+    }
+    .right {
+      float: right;
+      transform: skew(-60deg);
+      transform-origin: right top;
+      animation: rightlight 0.5s 0.5s;
+    }
+  }
+  .slogan {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffd119;
+    display: inline-block;
+    transform: rotate(-2deg);
+    margin: 40px 0;
+    text-align: left;
+    animation: bounceIn 1s 0.5s ease-in-out;
+    &:before,
+    &:after {
+      content: '';
+      width: 40%;
+      height: 3px;
+      background-color: $lightColor;
+      display: block;
+      position: absolute;
+    }
+    &:before {
+      top: -10px;
+      left: 0;
+      transform: rotate(-2deg);
+    }
+    &:after {
+      top: none;
+      bottom: -10px;
+      left: 0;
+      transform: rotate(2deg);
+    }
+    span {
+      color: $lightColor;
+      font-size: 32px;
+    }
+  }
   .people {
     width: 50%;
     padding-top: 23%;
@@ -14,6 +83,7 @@
     max-width: 1200px;
     display: flex;
     justify-content: center;
+    position: relative;
     .slogan2 {
       color: #114788;
       background-color: #fbeda6;
@@ -23,13 +93,141 @@
       text-align: center;
       display: inline-block;
       padding: 10px 20px;
+      position: absolute;
+      bottom: 29%;
+      white-space: nowrap;
+      transform: translate3d(0, -1000px, 0);
+      animation: fadeInUp 1s 1.8s forwards;
     }
+  }
+}
+@keyframes leftlight {
+  0% {
+    opacity: 0;
+    transform: skew(60deg) scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: skew(60deg) scale(1);
+  }
+}
+@keyframes rightlight {
+  0% {
+    opacity: 0;
+    transform: skew(-60deg) scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: skew(-60deg) scale(1);
+  }
+}
+@keyframes light {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes bounceIn {
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    -webkit-transform: scale3d(0.97, 0.97, 0.97);
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
 // $desktopHD | $tablet | $mobile
 @include devicepoint($desktopHD) {
   #ct_cover_student {
+    .lights {
+      z-index: 0;
+      .left {
+        width: 100%;
+        float: none;
+        margin: 0 auto;
+        transform: skew(0deg);
+        background: -moz-linear-gradient(
+          top,
+          rgba(252, 234, 75, 0.3) 0%,
+          rgba(252, 234, 75, 0.2) 58%,
+          rgba(253, 255, 136, 0) 99%,
+          rgba(253, 255, 137, 0) 100%
+        ); /* FF3.6-15 */
+        background: -webkit-linear-gradient(
+          top,
+          rgba(252, 234, 75, 0.3) 0%,
+          rgba(252, 234, 75, 0.2) 58%,
+          rgba(253, 255, 136, 0) 99%,
+          rgba(253, 255, 137, 0) 100%
+        ); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(
+          to bottom,
+          rgba(252, 234, 75, 0.3) 0%,
+          rgba(252, 234, 75, 0.2) 58%,
+          rgba(253, 255, 136, 0) 99%,
+          rgba(253, 255, 137, 0) 100%
+        ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4dfcea4b', endColorstr='#00fdff89',GradientType=0 ); /* IE6-9 */
+        animation: light 0.3s;
+        transform-origin: top center;
+      }
+      .right {
+        display: none;
+      }
+    }
     .people {
       width: 67%;
       padding-top: 30%;
@@ -41,6 +239,10 @@
     .people {
       width: 80%;
       padding-top: 36%;
+      .slogan2 {
+        font-size: 18px;
+        padding: 5px 10px;
+      }
     }
   }
 }
@@ -49,6 +251,9 @@
     .people {
       width: 90%;
       padding-top: 40%;
+      .slogan2 {
+        font-size: 15px;
+      }
     }
   }
 }

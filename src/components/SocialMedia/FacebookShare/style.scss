@@ -1,0 +1,13 @@
+
+$facebook: #2b7cc9;
+
+.cp_facebook_share.facebook {
+  color: #f9f9f9;
+  background-color: $facebook;
+  &:hover {
+    color: $facebook;
+    background-color: #f9f9f9;
+  }
+}
+
+

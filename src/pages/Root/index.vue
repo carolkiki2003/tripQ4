@@ -4,13 +4,15 @@
   import Footer from '@/components/Footer'
   import Content from '@/containers/Content'
   import CoverStudent from '@/containers/CoverStudent'
+  import SocialMediaGroup from '@/components/SocialMediaGroup'
   export default {
     name: 'Root',
     components: {
       Header,
       Footer,
       Content,
-      CoverStudent
+      CoverStudent,
+      SocialMediaGroup
     },
     data() {
       return {}
@@ -67,4 +69,4 @@
 </script>
 
 <template src="./template.html" />
-<style lang="scss" src="./style.scss" scoped />
+<style lang="scss" src="./style.scss" />

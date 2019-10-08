@@ -1,0 +1,13 @@
+
+$line: #6aa926;
+
+.cp_line_share.line {
+  color: #f9f9f9;
+  background-color: $line;
+  &:hover {
+    color: $line;
+    background-color: #f9f9f9;
+  }
+}
+
+
