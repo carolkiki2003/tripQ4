@@ -5,6 +5,7 @@
   import Content from '@/containers/Content'
   import CoverParents from '@/containers/CoverParents'
   import CoverStudent from '@/containers/CoverStudent'
+  import CoverTeacher from '@/containers/CoverTeacher'
   import SocialMediaGroup from '@/components/SocialMediaGroup'
   export default {
     name: 'Root',
@@ -14,6 +15,7 @@
       Content,
       CoverParents,
       CoverStudent,
+      CoverTeacher,
       SocialMediaGroup
     },
     data() {
