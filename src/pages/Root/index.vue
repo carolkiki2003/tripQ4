@@ -3,6 +3,7 @@
   import Header from '@/components/Header'
   import Footer from '@/components/Footer'
   import Content from '@/containers/Content'
+  import CoverParents from '@/containers/CoverParents'
   import CoverStudent from '@/containers/CoverStudent'
   import SocialMediaGroup from '@/components/SocialMediaGroup'
   export default {
@@ -11,6 +12,7 @@
       Header,
       Footer,
       Content,
+      CoverParents,
       CoverStudent,
       SocialMediaGroup
     },
