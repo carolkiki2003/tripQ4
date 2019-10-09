@@ -9,6 +9,16 @@
   import SocialMediaGroup from '@/components/SocialMediaGroup'
   export default {
     name: 'Root',
+    metaInfo() {
+      return {
+        meta: [
+          { property: 'og:title', content: this.ogTitle, vmid: 'og:title' },
+          { property: 'og:description', content: this.togDescription, vmid: 'og:description' },
+          { property: 'og:image', content: this.ogImg, vmid: 'og:image' },
+          { property: 'og:url', content: this.ogUrl, vmid: 'og:url' }
+        ]
+      }
+    },
     components: {
       Header,
       Footer,
@@ -19,7 +29,26 @@
       SocialMediaGroup
     },
     data() {
-      return {}
+      return {
+        tripData: null
+      }
+    },
+    computed: {
+      routeName() {
+        return this.$route.name || ''
+      },
+      ogTitle() {
+        return this.tripData[this.routeName].ogTitle
+      },
+      ogDescription() {
+        return this.tripData[this.routeName].ogDescription
+      },
+      ogImg() {
+        return this.tripData[this.routeName].ogImg
+      },
+      ogUrl() {
+        return this.tripData[this.routeName].ogUrl
+      }
     },
     methods: {
       resizeHandler() {
@@ -53,6 +82,9 @@
         SET_WINDOW: 'userAgent/SET_WINDOW',
         SET_SCROLL: 'userAgent/SET_SCROLL'
       })
+    },
+    created() {
+      this.tripData = require('../../../public/content.json')
     },
     async mounted() {
       try {

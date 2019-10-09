@@ -37,7 +37,7 @@
       float: right;
       transform: skew(-60deg);
       transform-origin: right top;
-      animation: rightlight 0.5s 0.5s;
+      animation: rightlight 1s;
     }
   }
   .slogan {
@@ -113,6 +113,10 @@
 }
 @keyframes rightlight {
   0% {
+    opacity: 0;
+    transform: skew(-60deg) scale(0);
+  }
+  50% {
     opacity: 0;
     transform: skew(-60deg) scale(0);
   }
