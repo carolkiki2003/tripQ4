@@ -13,7 +13,7 @@
       return {
         meta: [
           { property: 'og:title', content: this.ogTitle, vmid: 'og:title' },
-          { property: 'og:description', content: this.togDescription, vmid: 'og:description' },
+          { property: 'og:description', content: this.ogDescription, vmid: 'og:description' },
           { property: 'og:image', content: this.ogImg, vmid: 'og:image' },
           { property: 'og:url', content: this.ogUrl, vmid: 'og:url' }
         ]

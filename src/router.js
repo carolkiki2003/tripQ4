@@ -9,6 +9,7 @@ Vue.use(Router)
 const router = new Router({
   mode: 'history',
   // base: `${BASE_URL}/${FOLDER}`,
+  base: `/static/tripQ4/`,
   routes: [
     {
       path: '/parents.html',
